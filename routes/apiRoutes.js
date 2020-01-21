@@ -26,4 +26,27 @@ module.exports = app => {
         })
         res.json(true);
     });
+
+    app.delete("/api/notes/:id", function(req, res) {
+        const removeNote = req.params.id - 1;
+
+        const newNotes = [];
+
+        let notes = fs.readFileSync("./db/db.json");
+
+        notes = JSON.parse(notes);
+
+        notes.splice(removeNote, 1);
+
+        for (let i = 0; i < notes.length; i++) {
+            notes[i].id = i + 1;
+            newNotes.push(notes[i]);
+        }
+
+        fs.writeFile("./db/db.json", JSON.stringify(newNotes), () => {
+            console.log("Deleted Note");
+        });
+
+        res.json(newNotes);
+    });
 };

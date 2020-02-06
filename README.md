@@ -1,6 +1,7 @@
 # Note-Taker-WebApp
 
-Note taker Node command line app that listens a local host connection and lets you add/view/delete notes and saves the data so you can use and see the notes on different devices or platforms. It will save the notes and will always be there even if you end the local host connection and get back on later, you will have to delete it.
+Note taker Node command line app that listens a local host connection and lets you add/view/delete notes and saves the data so you can use and see the notes on different devices or platforms.
+
 
 **How To Use:**
 
